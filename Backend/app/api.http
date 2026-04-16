@@ -1,0 +1,55 @@
+@baseUrl = http://127.0.0.1:8000/api/v1
+
+POST {{baseUrl}}/trips
+Content-Type: application/json
+
+{
+  "title": "Test Trip",
+  "date": "2026-04-05",
+  "location": "Test",
+  "cost": 1500.00,
+  "description": "A wonderful trip to Test",
+  "activity_id": "activity_123"
+}
+
+
+### Create Registration
+POST {{baseUrl}}/registrations
+Content-Type: application/json
+
+{
+  "trip_id": 1,
+  "student_id": 11,
+  "parent_name": "Shubham Verma",
+  "parent_email": "shubham@test.com",
+  "parent_phone": "0211234567"
+}
+
+
+### Create Payment
+### =========================
+### 1. CREATE PAYMENT (SUCCESS PATH)
+### =========================
+
+### =========================
+### 1. CREATE PAYMENT - SUCCESS
+### =========================
+POST {{baseUrl}}/payments?registration_id=1&trip_id=1
+Content-Type: application/json
+
+{
+  "student_name": "John Doe",
+  "parent_name": "Jane Doe",
+  "amount": 1500,
+  "card_number": "erhjfjk",
+  "expiry_date": "12/30",
+  "cvv": "123",
+  "activity_id": "ACT-1001",
+  "school_id": "4"
+}
+
+### List Payments
+GET {{baseUrl}}/payments
+
+### Mark Payment Success
+POST {{baseUrl}}/payments/1/success

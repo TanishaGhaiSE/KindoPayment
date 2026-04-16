@@ -1,0 +1,46 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Migrations (optional depending on your setup)
+alembic/versions/*.pyc
+
+# SQLite DB (if using local DB)
+*.db
+*.sqlite3
+
+# MyPy / type check cache
+.mypy_cache/
+
+# Docker
+docker-compose.override.yml
+
+# Distribution / build
+build/
+dist/
+*.egg-info/
